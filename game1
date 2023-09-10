@@ -1,0 +1,29 @@
+console.log("Welcome to GAME!");
+let arr = ['snake', 'water', 'gun'];
+let ug = 0;
+let pg = 0;
+
+for (let turn = 1; turn <= 3; turn++) {
+    let pc = arr[Math.floor(Math.random() * 3)];
+    let uc = prompt("Enter 0 for snake, 1 for water, or 2 for gun");
+
+    if ((uc === '0' && pc === 'water') || (uc === '1' && pc === 'gun') || (uc === '2' && pc === 'snake')) {
+        console.log("Computer input is " + pc);
+        ug++;
+    } else if (uc === pc) {
+        console.log("Computer input is " + pc);
+        ug++;
+        pg++;
+    } else {
+        console.log("Computer input is " + pc);
+        pg++;
+    }
+}
+
+if (ug > pg) {
+    alert("You win! You scored more points than the computer.");
+} else if (ug < pg) {
+    alert("You lose! The computer scored more points than you.");
+} else {
+    alert("It's a draw! Both you and the computer scored the same points.");
+}
